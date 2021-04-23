@@ -35,8 +35,21 @@ export default function PageComponent(
 }
 
 const query = `
-  {
-    # TODO sækja gögn um myndir
+    query {
+      allFilms {
+        films {
+          title
+          episodeID
+          openingCrawl
+          characterConnection {
+            characters {
+              name
+              id
+            }
+          }
+        }
+      }
+    }
   }
   ${characterFragment}
 `;
