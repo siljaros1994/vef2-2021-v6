@@ -10,7 +10,7 @@ export function Film({  }: Props): JSX.Element {
   return (
     <section className={s.film}>
       <h2 className={s.film__title}>
-        Episode X
+        {`Episode ${film.episodeID}: ${film.title}`}
       </h2>
     </section>
   );
