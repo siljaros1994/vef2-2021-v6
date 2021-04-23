@@ -1,6 +1,11 @@
 // Hér eru þær týpur sem við skilgreinum á móti GraphQL endapunkti
 
 export interface ICharacter {
+  mass: number;
+  height: number;
+  hairColor: string;
+  eyeColor: string;
+  birthYear: string;
   id: string;
   name?: string;
   // TODO fleiri týpur
