@@ -24,16 +24,14 @@ type Props = {
  */
 type ExcludesFalse = <T>(x: T | null | undefined | false) => x is T;
 
-export function Characters({ }: Props): JSX.Element {
-  // TODO meðhöndla loading state, ekki þarf sérstaklega að villu state
+export function Characters({ peopleResponse }: Props): JSX.Element {
   const [loading, setLoading] = useState<boolean>(false);
-
-  // TODO setja grunngögn sem koma frá server
   const [characters, setCharacters] = useState<Array<ICharacter>>([]);
-
+  const [hasNextPage, setHasNextPage] = useState<string | null>(null);
   const [nextPage, setNextPage] = useState<string | null>(null);
 
   const fetchMore = async (): Promise<void> => {
+    let json;
     // TODO sækja gögn frá /pages/api/characters.ts (gegnum /api/characters), ef það eru fleiri
     // (sjá pageInfo.hasNextPage) með cursor úr pageInfo.endCursor
   };
